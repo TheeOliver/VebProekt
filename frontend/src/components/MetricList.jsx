@@ -1,4 +1,4 @@
-export default function MetricList({ allMetrics, selectedMetrics, toggleMetric }) {
+export default function MetricList({ allMetrics}) {
     return (
         <div>
             {allMetrics.map(metric => (
@@ -6,8 +6,6 @@ export default function MetricList({ allMetrics, selectedMetrics, toggleMetric }
                     <label>
                         <input
                             type="checkbox"
-                            checked={selectedMetrics.some(m => m.id === metric.id)}
-                            onChange={() => toggleMetric(metric)}
                         />
                         {metric.name}
                     </label>

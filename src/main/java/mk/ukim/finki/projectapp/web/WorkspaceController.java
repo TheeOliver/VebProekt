@@ -29,9 +29,14 @@ public class WorkspaceController {
         this.workspaceService = workspaceService;
     }
 
+    @GetMapping
+    public List<Workspace> getWorkspaces() {
+        return workspaceService.listAll();
+    }
+
     @GetMapping("/metric")
-    public ResponseEntity<MetricResponseDTO> getAllMetrics() {
-        return ResponseEntity.ok(new MetricResponseDTO(metricService.listStandardMetricsDTO(), metricService.listByManagerIdDTO(managerService.findByName("demoManager").getId())));
+    public List<Metric> getAllMetrics() {
+        return metricService.listAll();
     }
 
     @GetMapping("/workspaces")

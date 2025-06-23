@@ -2,7 +2,6 @@ package mk.ukim.finki.projectapp.bootstrap;
 
 import jakarta.annotation.PostConstruct;
 import mk.ukim.finki.projectapp.model.Manager;
-import mk.ukim.finki.projectapp.model.Metric;
 import mk.ukim.finki.projectapp.model.MetricType;
 import mk.ukim.finki.projectapp.service.ManagerService;
 import mk.ukim.finki.projectapp.service.MetricService;
@@ -16,19 +15,25 @@ public class DataInitializer {
     private final MetricService metricService;
     private final ManagerService managerService;
     private final WorkspaceService workspaceService;
-    private final DatabaseCleaner cleaner;
 
-    public DataInitializer(MetricService metricService, ManagerService managerService, WorkspaceService workspaceService, DatabaseCleaner cleaner) {
+    public DataInitializer(MetricService metricService, ManagerService managerService, WorkspaceService workspaceService) {
         this.metricService = metricService;
         this.managerService = managerService;
         this.workspaceService = workspaceService;
-        this.cleaner = cleaner;
     }
 
     @PostConstruct
     public void initData() {
-        cleaner.clean();
+
+        try{
+            managerService.findByName("StandardMetricOwner");
+            return;
+        } catch (Exception _){
+
+        }
+
         Manager standardMetricOwner = managerService.create("StandardMetricOwner");
+
         metricService.create("accuracy", MetricType.ONE_TO_FIVE, standardMetricOwner);
         metricService.create("comprehensiveness", MetricType.ONE_TO_FIVE, standardMetricOwner);
         metricService.create("clarity", MetricType.ONE_TO_FIVE, standardMetricOwner);

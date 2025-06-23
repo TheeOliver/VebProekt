@@ -1,11 +1,14 @@
 import React from 'react';
 import MetricChooserPage from './pages/MetricChooserPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
     return (
-        <div className="p-6">
-            <MetricChooserPage />
-        </div>
+
+        <body className={"p-6"} >
+            <WorkspacePage />
+        </body>
     );
 }
 
