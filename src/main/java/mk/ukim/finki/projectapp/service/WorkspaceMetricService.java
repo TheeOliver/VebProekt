@@ -9,4 +9,5 @@ import java.util.List;
 public interface WorkspaceMetricService {
     List<WorkspaceMetric> listMetricsFromWorkspace(Workspace workspace);
     WorkspaceMetric create(Workspace workspace, Metric metric, int pos, String range);
+    void deleteByWorkspace(Workspace workspace);
 }

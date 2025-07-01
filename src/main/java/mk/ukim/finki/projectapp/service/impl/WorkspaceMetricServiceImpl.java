@@ -27,4 +27,11 @@ public class WorkspaceMetricServiceImpl implements WorkspaceMetricService {
     public WorkspaceMetric create(Workspace workspace, Metric metric, int pos, String range) {
         return workspaceMetricRepository.save(new WorkspaceMetric(workspace, metric, pos, range));
     }
+
+    @Override
+    public void deleteByWorkspace(Workspace workspace) {
+        List<WorkspaceMetric> tmp = listMetricsFromWorkspace(workspace);
+        workspaceMetricRepository.deleteAll(tmp);
+
+    }
 }

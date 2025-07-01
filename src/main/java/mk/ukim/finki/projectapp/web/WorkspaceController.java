@@ -55,6 +55,7 @@ public class WorkspaceController {
 
     @PostMapping("/delete/{id}")
     public Workspace deleteWorkspace(@PathVariable Long id) {
+        workspaceMetricService.deleteByWorkspace(workspaceService.findById(id));
         return workspaceService.deleteById(id);
     }
 

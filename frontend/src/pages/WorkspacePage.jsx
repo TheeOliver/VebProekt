@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import WorkspaceButton from "../components/WorkspaceButton";
-import { useNavigate } from 'react-router-dom';
 import MetricOrderPopup from "../components/MetricOrderPopup";
 import MetricList from "../components/MetricList";
 import MetricPreviewPopup from "../components/MetricPreviewPopup";

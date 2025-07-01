@@ -42,7 +42,7 @@ export default function MetricList({ allMetrics, selectedCardIds, selectedCardTy
 
                         {isCustom && (
                             <button
-                                className="btn btn-sm btn-outline-danger position-absolute top-0 end-0 m-1 d-flex justify-content-center align-items-center"
+                                className="btn btn-sm btn-outline-danger position-absolute bottom-0 end-0 m-1 d-flex justify-content-center align-items-center"
                                 style={{width:"20px", height:"20px"}}
                                 onClick={(e) => {
                                     e.stopPropagation();
