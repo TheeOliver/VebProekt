@@ -4,6 +4,6 @@ import jakarta.persistence.Enumerated;
 
 
 public enum MetricType {
-    YES_NO,
-    ONE_TO_FIVE
+    Default,
+    Custom
 }

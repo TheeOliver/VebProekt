@@ -21,19 +21,9 @@ public class Metric {
     @Enumerated(EnumType.STRING)
     private MetricType type;
 
-    @ElementCollection
-    @OrderColumn
-    private List<String> comments = new ArrayList<>();
-
-    @ManyToOne(fetch = FetchType.EAGER)  // Eager fetching ensures creator is loaded
-    @JsonIgnoreProperties("customMetrics")
-    private Manager creator;
-
-    public Metric(String name, MetricType type, List<String> comments,Manager creator) {
+    public Metric(String name, MetricType type) {
         this.name = name;
         this.type = type;
-        this.comments = comments;
-        this.creator = creator;
     }
 
     public Metric() {
@@ -50,14 +40,6 @@ public class Metric {
 
     public MetricType getType() {
         return type;
-    }
-
-    public List<String> getComments() {
-        return comments;
-    }
-
-    public Manager getCreator() {
-        return creator;
     }
 
 }

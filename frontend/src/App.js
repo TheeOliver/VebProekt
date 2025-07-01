@@ -7,12 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-      <Router>
-          <Routes>
-              <Route path="/" element={<WorkspacePage />} />
-              <Route path="/create" element={<MetricChooserPage />} />
-          </Routes>
-      </Router>
+      <body className={"p-6"}>
+      <WorkspacePage/>
+      </body>
 
   );
 }

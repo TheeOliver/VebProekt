@@ -30,7 +30,6 @@ export default function MetricChooserPage() {
                 </div>
 
             </div>
-            <
         </body>
     );
 

@@ -7,6 +7,7 @@ function App() {
     return (
 
         <body className={"p-6"} >
+        <div>hi</div>
             <WorkspacePage />
         </body>
     );

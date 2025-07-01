@@ -1,14 +1,13 @@
 package mk.ukim.finki.projectapp.dto;
 
-public class MetricDTO {
+public class ConfigurationDTO {
+
     private Long id;
     private String name;
-    private String type;
 
-    public MetricDTO(Long id, String name, String type) {
+    public ConfigurationDTO(Long id, String name) {
         this.id = id;
         this.name = name;
-        this.type = type;
     }
 
     public Long getId() {
@@ -17,9 +16,5 @@ public class MetricDTO {
 
     public String getName() {
         return name;
-    }
-
-    public String getType() {
-        return type;
     }
 }
